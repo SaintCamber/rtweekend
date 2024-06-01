@@ -61,9 +61,9 @@ int main()
     camera cam;
 
     cam.aspect_ratio = 16.0 / 9.0;
-    cam.image_width = 400;
-    cam.samples_per_pixel = 50;
-    cam.max_depth = 10;
+    cam.image_width = 100;
+    cam.samples_per_pixel = 5;
+    cam.max_depth = 1;
 
     cam.vfov = 20;
     cam.lookfrom = point3(7, 9, 28);
