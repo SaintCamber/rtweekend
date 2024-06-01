@@ -23,7 +23,7 @@ int main()
             {
                 shared_ptr<material> sphere_material;
 
-                if (choose_mat < 0.8)
+                if (choose_mat < 0.7)
                 {
                     // diffuse
                     auto albedo = color::random() * color::random();
@@ -31,7 +31,7 @@ int main()
                     auto center2 = center + vec3(random_double(0,0.5), random_double(0,.5), 0);
                     world.add(make_shared<sphere>(center, center2, 0.2, sphere_material));
                 }
-                else if (choose_mat < 0.95)
+                else if (choose_mat < 0.85)
                 {
                     // metal
                     auto albedo = color::random(0.5, 1);
@@ -61,17 +61,17 @@ int main()
     camera cam;
 
     cam.aspect_ratio = 16.0 / 9.0;
-    cam.image_width = 800;
-    cam.samples_per_pixel = 500;
-    cam.max_depth = 50;
+    cam.image_width = 400;
+    cam.samples_per_pixel = 50;
+    cam.max_depth = 10;
 
     cam.vfov = 20;
-    cam.lookfrom = point3(13, 2, 3);
+    cam.lookfrom = point3(7, 9, 28);
     cam.lookat = point3(0, 0, 0);
     cam.vup = vec3(0, 1, 0);
 
     cam.defocus_angle = 0.5;
-    cam.focus_dist = 10.0;
+    cam.focus_dist = 15.0;
 
     cam.render(world);
 }
